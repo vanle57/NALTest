@@ -50,6 +50,36 @@ final class RequestManager {
             }
         }
     }
+
+    func getUser(id: Int, completion: @escaping Completion<User>) {
+        guard let url = URL(string: "https://api.github.com/users/\(id)") else {
+            completion(.failure(APIError.invalidURL))
+            return
+        }
+        let request = AF.request(url)
+        request.response { (data) in
+            switch data.result {
+            case .success(let data):
+                guard let data = data else {
+                    completion(.failure(APIError.emptyData))
+                    return
+                }
+                do {
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any],
+                        let user = Mapper<User>().map(JSON: json)
+                    else {
+                        completion(.failure(APIError.jsonConvertError))
+                        return
+                    }
+                    completion(.success(user))
+                } catch {
+                    completion(.failure(APIError.jsonConvertError))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
 
 enum APIError: Error {

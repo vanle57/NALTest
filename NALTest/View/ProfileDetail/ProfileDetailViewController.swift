@@ -36,6 +36,7 @@ final class ProfileDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
+        getProfile()
     }
 
     private func updateUI() {
@@ -45,5 +46,16 @@ final class ProfileDetailViewController: BaseViewController {
         numberOfRepoLabel.text = viewModel.user.numberOfRepos.toString()
         numberOfFollowerLabel.text = viewModel.user.numberOfFollowers.toString()
         numberOfFollowingLabel.text = viewModel.user.numberOfFollowing.toString()
+    }
+
+    private func getProfile() {
+        viewModel.getProfile { [weak self] (result) in
+            switch result {
+            case .success:
+                self?.updateUI()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

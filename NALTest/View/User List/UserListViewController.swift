@@ -53,3 +53,13 @@ extension UserListViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
+extension UserListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel.viewModelForProfile(at: indexPath) else { return }
+        let vc = ProfileDetailViewController()
+        vc.viewModel = viewModel
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}

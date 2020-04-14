@@ -20,6 +20,11 @@ final class UserListViewModel {
         return UserListCellViewModel(user: users[indexPath.row])
     }
 
+    func viewModelForProfile(at indexPath: IndexPath) -> ProfileDetailViewModel? {
+        guard indexPath.row < users.count else { return nil }
+        return ProfileDetailViewModel(id: users[indexPath.row].id)
+    }
+
     func getUsers(completion: @escaping Completion<Bool>) {
         RequestManager.shared.getUsers { [weak self] (result) in
             DispatchQueue.main.async {

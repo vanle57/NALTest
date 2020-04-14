@@ -14,4 +14,18 @@ final class ProfileDetailViewModel {
     init(id: Int = 0) {
         user.id = id
     }
+
+    func getProfile(completion: @escaping Completion<Bool>) {
+        RequestManager.shared.getUser(id: user.id) { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let user):
+                    self?.user = user
+                    completion(.success(true))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
 }
