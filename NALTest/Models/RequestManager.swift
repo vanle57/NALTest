@@ -41,7 +41,7 @@ final class RequestManager {
                         return
                     }
                     let users = Mapper<User>().mapArray(JSONArray: json)
-                    completion(.success(users))
+                    RealmManager.shared.saveUsers(users: users, completion: completion)
                 } catch {
                     completion(.failure(APIError.jsonConvertError))
                 }
@@ -86,6 +86,7 @@ enum APIError: Error {
     case invalidURL
     case jsonConvertError
     case emptyData
+    case realm
 
     var localizedDescription: String {
         switch self {
@@ -95,6 +96,8 @@ enum APIError: Error {
             return "Json convert error"
         case .emptyData:
             return "Empty data"
+        case .realm:
+            return "Something happend to realm"
         }
     }
 }

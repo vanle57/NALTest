@@ -38,4 +38,18 @@ final class UserListViewModel {
             }
         }
     }
+
+    func fetchUsers(completion: @escaping Completion<Bool>) {
+        RealmManager.shared.fetchUsers { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let users):
+                    self?.users = users
+                    completion(.success(true))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
 }
