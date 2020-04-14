@@ -17,6 +17,9 @@
 		7447FBC52445AFE500E8816F /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBC42445AFE500E8816F /* UserListViewModel.swift */; };
 		7447FBC72445B00800E8816F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBC62445B00800E8816F /* User.swift */; };
 		7447FBC92445B29D00E8816F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7447FBC82445B29D00E8816F /* LaunchScreen.storyboard */; };
+		7447FBCD2445B79700E8816F /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBCB2445B79700E8816F /* UserListCell.swift */; };
+		7447FBCE2445B79700E8816F /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7447FBCC2445B79700E8816F /* UserListCell.xib */; };
+		7447FBD02445B8FB00E8816F /* UserListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBCF2445B8FB00E8816F /* UserListCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		7447FBC42445AFE500E8816F /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		7447FBC62445B00800E8816F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7447FBC82445B29D00E8816F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7447FBCB2445B79700E8816F /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
+		7447FBCC2445B79700E8816F /* UserListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
+		7447FBCF2445B8FB00E8816F /* UserListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		7447FBBD2445528500E8816F /* User List */ = {
 			isa = PBXGroup;
 			children = (
+				7447FBCA2445B76A00E8816F /* Cell */,
 				7447FBB52445526F00E8816F /* UserListViewController.swift */,
 				7447FBC42445AFE500E8816F /* UserListViewModel.swift */,
 				7447FBB62445526F00E8816F /* UserListViewController.xib */,
@@ -133,6 +140,16 @@
 				7447FBC62445B00800E8816F /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7447FBCA2445B76A00E8816F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7447FBCB2445B79700E8816F /* UserListCell.swift */,
+				7447FBCC2445B79700E8816F /* UserListCell.xib */,
+				7447FBCF2445B8FB00E8816F /* UserListCellViewModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +212,7 @@
 			files = (
 				7447FBB82445526F00E8816F /* UserListViewController.xib in Resources */,
 				7447FBC92445B29D00E8816F /* LaunchScreen.storyboard in Resources */,
+				7447FBCE2445B79700E8816F /* UserListCell.xib in Resources */,
 				7447FBA92445505300E8816F /* Assets.xcassets in Resources */,
 				7447FBBC2445528000E8816F /* ProfileDetailViewController.xib in Resources */,
 			);
@@ -207,10 +225,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7447FBCD2445B79700E8816F /* UserListCell.swift in Sources */,
 				7447FBA02445505100E8816F /* AppDelegate.swift in Sources */,
 				7447FBBB2445528000E8816F /* ProfileDetailViewController.swift in Sources */,
 				7447FBC72445B00800E8816F /* User.swift in Sources */,
 				7447FBB42445525500E8816F /* BaseViewController.swift in Sources */,
+				7447FBD02445B8FB00E8816F /* UserListCellViewModel.swift in Sources */,
 				7447FBB72445526F00E8816F /* UserListViewController.swift in Sources */,
 				7447FBC52445AFE500E8816F /* UserListViewModel.swift in Sources */,
 			);
