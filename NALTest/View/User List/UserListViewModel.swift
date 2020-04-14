@@ -19,4 +19,18 @@ final class UserListViewModel {
         guard indexPath.row < users.count else { return nil }
         return UserListCellViewModel(user: users[indexPath.row])
     }
+
+    func getUsers(completion: @escaping Completion<Bool>) {
+        RequestManager.shared.getUsers { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let users):
+                    self?.users = users
+                    completion(.success(true))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
 }

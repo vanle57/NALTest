@@ -22,6 +22,7 @@
 		7447FBD02445B8FB00E8816F /* UserListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBCF2445B8FB00E8816F /* UserListCellViewModel.swift */; };
 		7447FBD22445CEAE00E8816F /* ProfileDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBD12445CEAE00E8816F /* ProfileDetailViewModel.swift */; };
 		7447FBD52445ECA400E8816F /* IntExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBD42445ECA400E8816F /* IntExt.swift */; };
+		7447FBD72445F0FF00E8816F /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBD62445F0FF00E8816F /* RequestManager.swift */; };
 		E0FEF02597EAA1D01AD76A6F /* Pods_NALTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58BFDCB9DCF3B4689BB58CF0 /* Pods_NALTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		7447FBCF2445B8FB00E8816F /* UserListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCellViewModel.swift; sourceTree = "<group>"; };
 		7447FBD12445CEAE00E8816F /* ProfileDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewModel.swift; sourceTree = "<group>"; };
 		7447FBD42445ECA400E8816F /* IntExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExt.swift; sourceTree = "<group>"; };
+		7447FBD62445F0FF00E8816F /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		D2FE445735BFEACCC033DB24 /* Pods-NALTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NALTest.release.xcconfig"; path = "Target Support Files/Pods-NALTest/Pods-NALTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +68,6 @@
 				48BA0BBE2FE9929A4861FC9A /* Pods-NALTest.debug.xcconfig */,
 				D2FE445735BFEACCC033DB24 /* Pods-NALTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -161,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				7447FBC62445B00800E8816F /* User.swift */,
+				7447FBD62445F0FF00E8816F /* RequestManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,6 +324,7 @@
 				7447FBBB2445528000E8816F /* ProfileDetailViewController.swift in Sources */,
 				7447FBC72445B00800E8816F /* User.swift in Sources */,
 				7447FBB42445525500E8816F /* BaseViewController.swift in Sources */,
+				7447FBD72445F0FF00E8816F /* RequestManager.swift in Sources */,
 				7447FBD02445B8FB00E8816F /* UserListCellViewModel.swift in Sources */,
 				7447FBB72445526F00E8816F /* UserListViewController.swift in Sources */,
 				7447FBC52445AFE500E8816F /* UserListViewModel.swift in Sources */,

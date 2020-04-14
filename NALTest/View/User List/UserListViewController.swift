@@ -17,11 +17,25 @@ class UserListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "User List"
+        configTableView()
+        getUsers()
     }
 
     private func configTableView() {
         let cellNib = UINib(nibName: "UserListCell", bundle: Bundle.main)
         tableView.register(cellNib, forCellReuseIdentifier: "UserListCell")
+        tableView.rowHeight = 105
+    }
+
+    private func getUsers() {
+        viewModel.getUsers { [weak self] (result) in
+            switch result {
+            case .success:
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 

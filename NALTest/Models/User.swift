@@ -22,8 +22,10 @@ final class User: Mappable {
     var numberOfFollowers: Int = 0
     var numberOfFollowing: Int = 0
 
+    init() { }
+
     init?(map: Map) { }
-    
+
     func mapping(map: Map) {
         id <- map["id"]
         avatarUrl <- map["avatar_url"]
