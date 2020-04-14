@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Kingfisher
 
-class UserListCell: UITableViewCell {
+final class UserListCell: UITableViewCell {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -26,6 +27,7 @@ class UserListCell: UITableViewCell {
     }
 
     private func updateUI() {
+        avatarImageView.setImage(url: viewModel.avatarUrl)
         usernameLabel.text = viewModel.username
         urlLabel.text = viewModel.url
     }

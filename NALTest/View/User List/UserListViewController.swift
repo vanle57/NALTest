@@ -17,11 +17,25 @@ class UserListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "User List"
+        configTableView()
+        getUsers()
     }
 
     private func configTableView() {
         let cellNib = UINib(nibName: "UserListCell", bundle: Bundle.main)
         tableView.register(cellNib, forCellReuseIdentifier: "UserListCell")
+        tableView.rowHeight = 105
+    }
+
+    private func getUsers() {
+        viewModel.getUsers { [weak self] (result) in
+            switch result {
+            case .success:
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -37,5 +51,15 @@ extension UserListViewController: UITableViewDataSource {
             else { return UITableViewCell() }
         cell.viewModel = viewModel
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension UserListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel.viewModelForProfile(at: indexPath) else { return }
+        let vc = ProfileDetailViewController()
+        vc.viewModel = viewModel
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
