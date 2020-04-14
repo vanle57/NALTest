@@ -9,25 +9,39 @@
 /* Begin PBXBuildFile section */
 		7447FBA02445505100E8816F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FB9F2445505100E8816F /* AppDelegate.swift */; };
 		7447FBA92445505300E8816F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7447FBA82445505300E8816F /* Assets.xcassets */; };
-		7447FBAC2445505300E8816F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7447FBAA2445505300E8816F /* LaunchScreen.storyboard */; };
-		7447FBB42445525500E8816F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBB32445525500E8816F /* MainViewController.swift */; };
+		7447FBB42445525500E8816F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBB32445525500E8816F /* BaseViewController.swift */; };
 		7447FBB72445526F00E8816F /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBB52445526F00E8816F /* UserListViewController.swift */; };
 		7447FBB82445526F00E8816F /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7447FBB62445526F00E8816F /* UserListViewController.xib */; };
 		7447FBBB2445528000E8816F /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBB92445528000E8816F /* ProfileDetailViewController.swift */; };
 		7447FBBC2445528000E8816F /* ProfileDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7447FBBA2445528000E8816F /* ProfileDetailViewController.xib */; };
+		7447FBC52445AFE500E8816F /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBC42445AFE500E8816F /* UserListViewModel.swift */; };
+		7447FBC72445B00800E8816F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBC62445B00800E8816F /* User.swift */; };
+		7447FBC92445B29D00E8816F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7447FBC82445B29D00E8816F /* LaunchScreen.storyboard */; };
+		7447FBCD2445B79700E8816F /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBCB2445B79700E8816F /* UserListCell.swift */; };
+		7447FBCE2445B79700E8816F /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7447FBCC2445B79700E8816F /* UserListCell.xib */; };
+		7447FBD02445B8FB00E8816F /* UserListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBCF2445B8FB00E8816F /* UserListCellViewModel.swift */; };
+		7447FBD22445CEAE00E8816F /* ProfileDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBD12445CEAE00E8816F /* ProfileDetailViewModel.swift */; };
+		7447FBD52445ECA400E8816F /* IntExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBD42445ECA400E8816F /* IntExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7447FB9C2445505100E8816F /* NALTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NALTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7447FB9F2445505100E8816F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7447FBA82445505300E8816F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7447FBAB2445505300E8816F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7447FBAD2445505300E8816F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7447FBB32445525500E8816F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7447FBB32445525500E8816F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7447FBB52445526F00E8816F /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		7447FBB62445526F00E8816F /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListViewController.xib; sourceTree = "<group>"; };
 		7447FBB92445528000E8816F /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		7447FBBA2445528000E8816F /* ProfileDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileDetailViewController.xib; sourceTree = "<group>"; };
+		7447FBC42445AFE500E8816F /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		7447FBC62445B00800E8816F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7447FBC82445B29D00E8816F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7447FBCB2445B79700E8816F /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
+		7447FBCC2445B79700E8816F /* UserListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
+		7447FBCF2445B8FB00E8816F /* UserListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCellViewModel.swift; sourceTree = "<group>"; };
+		7447FBD12445CEAE00E8816F /* ProfileDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewModel.swift; sourceTree = "<group>"; };
+		7447FBD42445ECA400E8816F /* IntExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +87,9 @@
 		7447FBBD2445528500E8816F /* User List */ = {
 			isa = PBXGroup;
 			children = (
+				7447FBCA2445B76A00E8816F /* Cell */,
 				7447FBB52445526F00E8816F /* UserListViewController.swift */,
+				7447FBC42445AFE500E8816F /* UserListViewModel.swift */,
 				7447FBB62445526F00E8816F /* UserListViewController.xib */,
 			);
 			path = "User List";
@@ -84,6 +100,7 @@
 			children = (
 				7447FBB92445528000E8816F /* ProfileDetailViewController.swift */,
 				7447FBBA2445528000E8816F /* ProfileDetailViewController.xib */,
+				7447FBD12445CEAE00E8816F /* ProfileDetailViewModel.swift */,
 			);
 			path = ProfileDetail;
 			sourceTree = "<group>";
@@ -91,7 +108,7 @@
 		7447FBBF2445546B00E8816F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7447FBB32445525500E8816F /* MainViewController.swift */,
+				7447FBB32445525500E8816F /* BaseViewController.swift */,
 				7447FBBE244552A400E8816F /* ProfileDetail */,
 				7447FBBD2445528500E8816F /* User List */,
 			);
@@ -101,6 +118,7 @@
 		7447FBC02445548700E8816F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7447FBD32445EC9200E8816F /* Ext */,
 				7447FBA82445505300E8816F /* Assets.xcassets */,
 			);
 			path = Library;
@@ -117,7 +135,7 @@
 		7447FBC2244554BC00E8816F /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				7447FBAA2445505300E8816F /* LaunchScreen.storyboard */,
+				7447FBC82445B29D00E8816F /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
 			sourceTree = "<group>";
@@ -125,8 +143,27 @@
 		7447FBC3244554DE00E8816F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7447FBC62445B00800E8816F /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7447FBCA2445B76A00E8816F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7447FBCB2445B79700E8816F /* UserListCell.swift */,
+				7447FBCC2445B79700E8816F /* UserListCell.xib */,
+				7447FBCF2445B8FB00E8816F /* UserListCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7447FBD32445EC9200E8816F /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				7447FBD42445ECA400E8816F /* IntExt.swift */,
+			);
+			path = Ext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,8 +224,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7447FBAC2445505300E8816F /* LaunchScreen.storyboard in Resources */,
 				7447FBB82445526F00E8816F /* UserListViewController.xib in Resources */,
+				7447FBC92445B29D00E8816F /* LaunchScreen.storyboard in Resources */,
+				7447FBCE2445B79700E8816F /* UserListCell.xib in Resources */,
 				7447FBA92445505300E8816F /* Assets.xcassets in Resources */,
 				7447FBBC2445528000E8816F /* ProfileDetailViewController.xib in Resources */,
 			);
@@ -201,25 +239,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7447FBD22445CEAE00E8816F /* ProfileDetailViewModel.swift in Sources */,
+				7447FBD52445ECA400E8816F /* IntExt.swift in Sources */,
+				7447FBCD2445B79700E8816F /* UserListCell.swift in Sources */,
 				7447FBA02445505100E8816F /* AppDelegate.swift in Sources */,
 				7447FBBB2445528000E8816F /* ProfileDetailViewController.swift in Sources */,
-				7447FBB42445525500E8816F /* MainViewController.swift in Sources */,
+				7447FBC72445B00800E8816F /* User.swift in Sources */,
+				7447FBB42445525500E8816F /* BaseViewController.swift in Sources */,
+				7447FBD02445B8FB00E8816F /* UserListCellViewModel.swift in Sources */,
 				7447FBB72445526F00E8816F /* UserListViewController.swift in Sources */,
+				7447FBC52445AFE500E8816F /* UserListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		7447FBAA2445505300E8816F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7447FBAB2445505300E8816F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7447FBAE2445505300E8816F /* Debug */ = {
@@ -341,7 +374,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NALTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NALTest/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,7 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NALTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NALTest/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

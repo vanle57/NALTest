@@ -8,23 +8,34 @@
 
 import UIKit
 
-class UserListViewController: UIViewController {
+class UserListViewController: BaseViewController {
+
+    @IBOutlet weak var tableView: UITableView!
+
+    var viewModel: UserListViewModel = UserListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "User List"
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configTableView() {
+        let cellNib = UINib(nibName: "UserListCell", bundle: Bundle.main)
+        tableView.register(cellNib, forCellReuseIdentifier: "UserListCell")
     }
-    */
+}
 
+// MARK: - UITableViewDataSource
+extension UserListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows()
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserListCell") as? UserListCell,
+            let viewModel = viewModel.viewModelForCellViewModel(at: indexPath)
+            else { return UITableViewCell() }
+        cell.viewModel = viewModel
+        return cell
+    }
 }

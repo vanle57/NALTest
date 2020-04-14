@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  IntExt.swift
 //  NALTest
 //
 //  Created by Van Le H. on 4/14/20.
@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+extension Int {
+    func toString() -> String {
+        return String(self)
+    }
+}

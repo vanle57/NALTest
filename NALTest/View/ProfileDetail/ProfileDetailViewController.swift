@@ -8,23 +8,42 @@
 
 import UIKit
 
-class ProfileDetailViewController: UIViewController {
+final class ProfileDetailViewController: BaseViewController {
+
+    // MARK: - IBOutlets
+    @IBOutlet weak var scrollView: UIScrollView!
+    /*
+        Info
+     **/
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+
+    /*
+        About
+     **/
+    @IBOutlet weak var bioLabel: UILabel!
+
+    /*
+        Stats
+     **/
+    @IBOutlet weak var numberOfRepoLabel: UILabel!
+    @IBOutlet weak var numberOfFollowerLabel: UILabel!
+    @IBOutlet weak var numberOfFollowingLabel: UILabel!
+
+    var viewModel: ProfileDetailViewModel = ProfileDetailViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "Profile"
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func updateUI() {
+        usernameLabel.text = viewModel.user.username
+        locationLabel.text = viewModel.user.location
+        bioLabel.text = viewModel.user.bio
+        numberOfRepoLabel.text = viewModel.user.numberOfRepos.toString()
+        numberOfFollowerLabel.text = viewModel.user.numberOfFollowers.toString()
+        numberOfFollowingLabel.text = viewModel.user.numberOfFollowing.toString()
     }
-    */
-
 }
