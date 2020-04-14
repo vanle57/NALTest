@@ -39,7 +39,13 @@ final class ProfileDetailViewController: BaseViewController {
         getProfile()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
+    }
+
     private func updateUI() {
+        avatarImageView.setImage(url: viewModel.user.avatarUrl)
         usernameLabel.text = viewModel.user.username
         locationLabel.text = viewModel.user.location
         bioLabel.text = viewModel.user.bio

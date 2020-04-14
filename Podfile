@@ -7,5 +7,7 @@ target 'NALTest' do
 
   # Pods for NALTest
   pod 'Alamofire'
-  pod 'ObjectMapper'	
+  pod 'ObjectMapper'
+  pod 'Kingfisher'
+
 end
