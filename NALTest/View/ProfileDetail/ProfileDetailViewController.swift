@@ -10,6 +10,27 @@ import UIKit
 
 class ProfileDetailViewController: BaseViewController {
 
+    // MARK: - IBOutlets
+    @IBOutlet weak var scrollView: UIScrollView!
+    /*
+        Info
+     **/
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+
+    /*
+        About
+     **/
+    @IBOutlet weak var bioLabel: UILabel!
+
+    /*
+        Stats
+     **/
+    @IBOutlet weak var numberOfRepoLabel: UILabel!
+    @IBOutlet weak var numberOfFollowerLabel: UILabel!
+    @IBOutlet weak var numberOfFollowingLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
