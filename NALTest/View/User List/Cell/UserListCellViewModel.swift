@@ -15,7 +15,7 @@ final class UserListCellViewModel {
 
     init(user: User = User()) {
         avatarUrl = user.avatarUrl
-        username = user.username
+        username = user.login
         url = user.url
     }
 }

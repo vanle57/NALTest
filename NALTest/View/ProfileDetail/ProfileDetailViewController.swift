@@ -8,12 +8,11 @@
 
 import UIKit
 
-class ProfileDetailViewController: UIViewController {
+class ProfileDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "Profile"
     }
 
 
