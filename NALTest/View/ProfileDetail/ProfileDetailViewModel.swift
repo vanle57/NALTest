@@ -9,14 +9,16 @@
 import Foundation
 
 final class ProfileDetailViewModel {
+    
+    var id: Int
     var user: User = User()
 
     init(id: Int = 0) {
-        user.id = id
+        self.id = id
     }
 
     func getProfile(completion: @escaping Completion<Bool>) {
-        RequestManager.shared.getUser(id: user.id) { [weak self] (result) in
+        RequestManager.shared.getUser(id: id) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let user):
