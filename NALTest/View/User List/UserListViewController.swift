@@ -11,6 +11,7 @@ import UIKit
 class UserListViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    private let refreshControl = UIRefreshControl()
 
     var viewModel: UserListViewModel = UserListViewModel()
 
@@ -25,13 +26,21 @@ class UserListViewController: BaseViewController {
         let cellNib = UINib(nibName: "UserListCell", bundle: Bundle.main)
         tableView.register(cellNib, forCellReuseIdentifier: "UserListCell")
         tableView.rowHeight = 105
+
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(getUsers), for: .valueChanged)
     }
 
-    private func getUsers() {
+    @objc private func getUsers() {
         viewModel.getUsers { [weak self] (result) in
             switch result {
             case .success:
                 self?.tableView.reloadData()
+                self?.refreshControl.endRefreshing()
             case .failure(let error):
                 print(error.localizedDescription)
             }

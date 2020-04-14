@@ -30,18 +30,29 @@ final class ProfileDetailViewController: BaseViewController {
     @IBOutlet weak var numberOfRepoLabel: UILabel!
     @IBOutlet weak var numberOfFollowerLabel: UILabel!
     @IBOutlet weak var numberOfFollowingLabel: UILabel!
+    private let refreshControl = UIRefreshControl()
 
     var viewModel: ProfileDetailViewModel = ProfileDetailViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
+        configScrollView()
         getProfile()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
+    }
+
+    private func configScrollView() {
+        if #available(iOS 10.0, *) {
+            scrollView.refreshControl = refreshControl
+        } else {
+            scrollView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(getProfile), for: .valueChanged)
     }
 
     private func updateUI() {
@@ -54,11 +65,12 @@ final class ProfileDetailViewController: BaseViewController {
         numberOfFollowingLabel.text = viewModel.user.numberOfFollowing.toString()
     }
 
-    private func getProfile() {
+    @objc private func getProfile() {
         viewModel.getProfile { [weak self] (result) in
             switch result {
             case .success:
                 self?.updateUI()
+                self?.refreshControl.endRefreshing()
             case .failure(let error):
                 print(error.localizedDescription)
             }
