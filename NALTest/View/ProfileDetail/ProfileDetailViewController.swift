@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileDetailViewController: BaseViewController {
+final class ProfileDetailViewController: BaseViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var scrollView: UIScrollView!
@@ -31,20 +31,19 @@ class ProfileDetailViewController: BaseViewController {
     @IBOutlet weak var numberOfFollowerLabel: UILabel!
     @IBOutlet weak var numberOfFollowingLabel: UILabel!
 
+    var viewModel: ProfileDetailViewModel = ProfileDetailViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func updateUI() {
+        usernameLabel.text = viewModel.user.username
+        locationLabel.text = viewModel.user.location
+        bioLabel.text = viewModel.user.bio
+        numberOfRepoLabel.text = viewModel.user.numberOfRepos.toString()
+        numberOfFollowerLabel.text = viewModel.user.numberOfFollowers.toString()
+        numberOfFollowingLabel.text = viewModel.user.numberOfFollowing.toString()
     }
-    */
-
 }
