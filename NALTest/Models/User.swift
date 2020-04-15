@@ -6,25 +6,25 @@
 //  Copyright © 2020 Van Le H All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 import ObjectMapper
 
-final class User: Mappable {
+@objcMembers final class User: Object, Mappable {
 
-    var id: Int = 0
-    var avatarUrl: String = ""
-    var login: String = ""
-    var username: String = ""
-    var location: String = ""
-    var bio: String?
-    var url: String = ""
-    var numberOfRepos: Int = 0
-    var numberOfFollowers: Int = 0
-    var numberOfFollowing: Int = 0
+    dynamic var id: Int = 0
+    dynamic var avatarUrl: String = ""
+    dynamic var login: String = ""
+    dynamic var username: String = ""
+    dynamic var location: String = ""
+    dynamic var bio: String?
+    dynamic var url: String = ""
+    dynamic var numberOfRepos: Int = 0
+    dynamic var numberOfFollowers: Int = 0
+    dynamic var numberOfFollowing: Int = 0
 
-    init() { }
-
-    init?(map: Map) { }
+    required convenience init?(map: Map) {
+        self.init()
+    }
 
     func mapping(map: Map) {
         id <- map["id"]
@@ -37,5 +37,9 @@ final class User: Mappable {
         numberOfRepos <- map["public_repos"]
         numberOfFollowers <- map["followers"]
         numberOfFollowing <- map["following"]
+    }
+
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }

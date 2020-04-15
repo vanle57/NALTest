@@ -38,7 +38,11 @@ final class ProfileDetailViewController: BaseViewController {
         super.viewDidLoad()
         title = "Profile"
         configScrollView()
-        getProfile()
+        if AppDelegate.shared.isNetworkConnectionAvailable() {
+            getProfile()
+        } else {
+            fetchProfile()
+        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -71,6 +75,17 @@ final class ProfileDetailViewController: BaseViewController {
             case .success:
                 self?.updateUI()
                 self?.refreshControl.endRefreshing()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    private func fetchProfile() {
+        viewModel.fetchProfile { [weak self] (result) in
+            switch result {
+            case .success:
+                self?.updateUI()
             case .failure(let error):
                 print(error.localizedDescription)
             }

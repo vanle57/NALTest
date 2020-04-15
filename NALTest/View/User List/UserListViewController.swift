@@ -19,7 +19,11 @@ class UserListViewController: BaseViewController {
         super.viewDidLoad()
         title = "User List"
         configTableView()
-        getUsers()
+        if AppDelegate.shared.isNetworkConnectionAvailable() {
+            getUsers()
+        } else {
+            fetchUsers()
+        }
     }
 
     private func configTableView() {
@@ -41,6 +45,17 @@ class UserListViewController: BaseViewController {
             case .success:
                 self?.tableView.reloadData()
                 self?.refreshControl.endRefreshing()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    private func fetchUsers() {
+        viewModel.fetchUsers { [weak self] (result) in
+            switch result {
+            case .success:
+                self?.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }

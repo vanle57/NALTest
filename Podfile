@@ -9,5 +9,6 @@ target 'NALTest' do
   pod 'Alamofire'
   pod 'ObjectMapper'
   pod 'Kingfisher'
+  pod 'RealmSwift', '~> 3.20.0'
 
 end

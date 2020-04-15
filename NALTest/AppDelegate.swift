@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    static let shared: AppDelegate = {
+        guard let shared = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Cannot cast `UIApplication.shared.delegate` to `AppDelegate`.")
+        }
+        return shared
+    }()
     
     var window: UIWindow?
 
@@ -24,3 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate {
+    func isNetworkConnectionAvailable() -> Bool {
+        return NetworkReachabilityManager()?.isReachable ?? false
+    }
+}
