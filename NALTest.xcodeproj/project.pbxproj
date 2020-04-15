@@ -26,6 +26,8 @@
 		7447FBD92445FEBF00E8816F /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBD82445FEBF00E8816F /* UIImageViewExt.swift */; };
 		7447FBDD24460BA500E8816F /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBDC24460BA500E8816F /* RealmManager.swift */; };
 		7447FBE52446A4FC00E8816F /* NALTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBE42446A4FC00E8816F /* NALTestTests.swift */; };
+		7447FBED2446A67F00E8816F /* ProfileDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447FBEC2446A67F00E8816F /* ProfileDetailViewModelTests.swift */; };
+		7447FBEF2446A88D00E8816F /* ProfileDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 7447FBEE2446A88D00E8816F /* ProfileDetail.json */; };
 		E0FEF02597EAA1D01AD76A6F /* Pods_NALTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58BFDCB9DCF3B4689BB58CF0 /* Pods_NALTest.framework */; };
 		EC986627384B92F8C50C9561 /* libPods-NALTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E72517B4513B95991BC7632 /* libPods-NALTestTests.a */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		7447FBE22446A4FC00E8816F /* NALTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NALTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7447FBE42446A4FC00E8816F /* NALTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NALTestTests.swift; sourceTree = "<group>"; };
 		7447FBE62446A4FC00E8816F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7447FBEC2446A67F00E8816F /* ProfileDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewModelTests.swift; sourceTree = "<group>"; };
+		7447FBEE2446A88D00E8816F /* ProfileDetail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProfileDetail.json; sourceTree = "<group>"; };
 		756462D11867999B0516F50B /* Pods-NALTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NALTestTests.release.xcconfig"; path = "Target Support Files/Pods-NALTestTests/Pods-NALTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		8E72517B4513B95991BC7632 /* libPods-NALTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NALTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6875640CDD953B8A87C644 /* Pods-NALTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NALTestTests.debug.xcconfig"; path = "Target Support Files/Pods-NALTestTests/Pods-NALTestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 			children = (
 				7447FBE42446A4FC00E8816F /* NALTestTests.swift */,
 				7447FBE62446A4FC00E8816F /* Info.plist */,
+				7447FBEC2446A67F00E8816F /* ProfileDetailViewModelTests.swift */,
+				7447FBEE2446A88D00E8816F /* ProfileDetail.json */,
 			);
 			path = NALTestTests;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7447FBEF2446A88D00E8816F /* ProfileDetail.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7447FBE52446A4FC00E8816F /* NALTestTests.swift in Sources */,
+				7447FBED2446A67F00E8816F /* ProfileDetailViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

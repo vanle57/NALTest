@@ -15,7 +15,7 @@ end
 target 'NALTestTests' do
   inherit! :search_paths
   # Pods for testing
-  pod 'Nimble', '7.1.2'
-  pod 'Quick', '1.3.0'
+  pod 'Nimble', '~> 7.3.2'
+  pod 'Quick', '~> 1.3.2'
   pod 'OHHTTPStubs/Swift'
 end
