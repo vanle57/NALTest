@@ -27,29 +27,33 @@ final class UserListViewModel {
 
     func getUsers(completion: @escaping Completion<Bool>) {
         RequestManager.shared.getUsers { [weak self] (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let users):
-                    self?.users = users
-                    completion(.success(true))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+            switch result {
+            case .success(let users):
+                self?.users = users
+                self?.saveUsers(completion: completion)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
+    func saveUsers(completion: @escaping Completion<Bool>) {
+        RealmManager.shared.add(objects: users) { (result) in
+            switch result {
+            case .success:
+                completion(.success(true))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }
 
     func fetchUsers(completion: @escaping Completion<Bool>) {
-        RealmManager.shared.fetchUsers { [weak self] (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let users):
-                    self?.users = users
-                    completion(.success(true))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
+         if let users = RealmManager.shared.fetchObjects(User.self) {
+            self.users = Array(users)
+            completion(.success(true))
+        } else {
+            completion(.failure(APIError.realm))
         }
     }
 }

@@ -9,7 +9,7 @@
 import RealmSwift
 import ObjectMapper
 
-final class User: Object, Mappable {
+@objcMembers final class User: Object, Mappable {
 
     dynamic var id: Int = 0
     dynamic var avatarUrl: String = ""
@@ -22,9 +22,9 @@ final class User: Object, Mappable {
     dynamic var numberOfFollowers: Int = 0
     dynamic var numberOfFollowing: Int = 0
 
-    required init() { }
-
-    init?(map: Map) { }
+    required convenience init?(map: Map) {
+        self.init()
+    }
 
     func mapping(map: Map) {
         id <- map["id"]
@@ -39,7 +39,7 @@ final class User: Object, Mappable {
         numberOfFollowing <- map["following"]
     }
 
-    override class func primaryKey() -> String? {
+    override static func primaryKey() -> String? {
         return "id"
     }
 }

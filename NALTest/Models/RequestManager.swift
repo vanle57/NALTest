@@ -41,7 +41,7 @@ final class RequestManager {
                         return
                     }
                     let users = Mapper<User>().mapArray(JSONArray: json)
-                    RealmManager.shared.saveUsers(users: users, completion: completion)
+                    completion(.success(users))
                 } catch {
                     completion(.failure(APIError.jsonConvertError))
                 }
