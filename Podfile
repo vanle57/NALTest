@@ -10,5 +10,12 @@ target 'NALTest' do
   pod 'ObjectMapper'
   pod 'Kingfisher'
   pod 'RealmSwift', '~> 3.20.0'
+end
 
+target 'NALTestTests' do
+  inherit! :search_paths
+  # Pods for testing
+  pod 'Nimble', '7.1.2'
+  pod 'Quick', '1.3.0'
+  pod 'OHHTTPStubs/Swift'
 end
